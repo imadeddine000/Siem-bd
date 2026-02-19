@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SOC Collector</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+  <h1 class="text-3xl font-bold mb-6">🛡 SOC Log Collector Dashboard</h1>
+
+  <div class="bg-white p-4 rounded shadow mb-6">
+    <h2 class="text-xl font-semibold mb-2">Agent Install Command</h2>
+    <div class="flex items-center space-x-2">
+      <code class="bg-gray-200 p-2 rounded flex-1" id="cmd">
+        curl http://<%= hostIp %>:3000/setup.sh | sudo bash
+      </code>
+      <button onclick="copy()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Copy</button>
+    </div>
+  </div>
+
+  <div class="bg-white p-4 rounded shadow">
+    <h2 class="text-xl font-semibold mb-4">Registered Agents</h2>
+
+    <% if (agents.length === 0) { %>
+      <p>No agents registered yet.</p>
+    <% } else { %>
+      <div class="overflow-x-auto">
+      <table class="min-w-full border-collapse block md:table">
+        <thead class="block md:table-header-group bg-gray-200">
+          <tr class="border border-gray-300 md:border-none block md:table-row">
+            <th class="p-2 text-left">Hostname</th>
+            <th class="p-2 text-left">OS</th>
+            <th class="p-2 text-left">Arch</th>
+            <th class="p-2 text-left">IP</th>
+            <th class="p-2 text-left">Registered</th>
+            <th class="p-2 text-left">Status</th>
+          </tr>
+        </thead>
+        <tbody class="block md:table-row-group">
+          <% agents.forEach(a => { %>
+            <tr class="border border-gray-300 md:border-none block md:table-row mb-2 md:mb-0">
+              <td class="p-2"><%= a.hostname %></td>
+              <td class="p-2"><%= a.os %> <%= a.version %></td>
+              <td class="p-2"><%= a.arch %></td>
+              <td class="p-2"><%= a.agent_ip %></td>
+              <td class="p-2"><%= a.registeredAt %></td>
+              <td class="p-2">
+                <span class="px-2 py-1 rounded text-white <%= a.status === 'online' ? 'bg-green-500' : 'bg-red-500' %>">
+                  <%= a.status %>
+                </span>
+              </td>
+            </tr>
+          <% }) %>
+        </tbody>
+      </table>
+      </div>
+    <% } %>
+  </div>
+
+<script>
+function copy() {
+  navigator.clipboard.writeText(document.getElementById("cmd").innerText.trim());
+  alert("Copied!");
+}
+</script>
+</body>
+</html>

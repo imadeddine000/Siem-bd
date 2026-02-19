@@ -1,0 +1,157 @@
+version: '3.8'
+
+networks:
+  siem-network:
+    name: siem-network
+    driver: bridge
+
+volumes:
+  spark-checkpoints:
+  elasticsearch-data:       # <-- persists all ES indices and data
+  kibana-data:              # <-- persists dashboards, visualizations, saved searches
+
+services:
+  # ============================================
+  # Elasticsearch - Data Storage
+  # ============================================
+  elasticsearch:
+    image: docker.io/library/elasticsearch:8.11.0
+    container_name: elasticsearch
+    networks:
+      - siem-network
+    ports:
+      - "9200:9200"
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.security.enrollment.enabled=false
+      - xpack.security.transport.ssl.enabled=false
+      - xpack.security.http.ssl.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data   # <-- persistent ES data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9200"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # ============================================
+  # Kibana - Visualization
+  # ============================================
+  kibana:
+    image: docker.io/library/kibana:8.11.0
+    container_name: kibana
+    networks:
+      - siem-network
+    ports:
+      - "5601:5601"
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+      - SERVER_NAME=kibana
+    volumes:
+      - kibana-data:/usr/share/kibana/data                 # <-- persistent dashboards
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    restart: unless-stopped
+
+  # ============================================
+  # Kafka - Message Broker
+  # ============================================
+  kafka:
+    image: docker.io/apache/kafka:4.1.1
+    container_name: kafka
+    networks:
+      - siem-network
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      - KAFKA_PROCESS_ROLES=broker,controller
+      - KAFKA_NODE_ID=1
+      - KAFKA_CONTROLLER_QUORUM_VOTERS=1@localhost:9093
+      - KAFKA_LISTENERS=PLAINTEXT://0.0.0.0:9092,CONTROLLER://localhost:9093,INTERNAL://0.0.0.0:29092
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092,INTERNAL://kafka:29092
+      - KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT
+      - KAFKA_INTER_BROKER_LISTENER_NAME=INTERNAL
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+      - KAFKA_CONTROLLER_LISTENER_NAMES=CONTROLLER
+      - KAFKA_LOG_DIRS=/tmp/kraft-combined-logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "/opt/kafka/bin/kafka-topics.sh", "--bootstrap-server", "localhost:9092", "--list"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  # ============================================
+  # Spark Master + Worker
+  # ============================================
+  spark:
+    image: docker.io/apache/spark:3.5.0
+    container_name: spark
+    networks:
+      - siem-network
+    ports:
+      - "8080:8080"
+      - "4040:4040"
+      - "7077:7077"
+    command: >
+      /bin/bash -c "
+        /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master &
+        sleep 5 &&
+        /opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark:7077 &
+        tail -f /dev/null
+      "
+    volumes:
+      - /root/siem/spark-apps:/opt/spark-apps:z
+      - /root/siem/spark-jars:/opt/spark-jars:z
+      - spark-checkpoints:/tmp/checkpoints
+    depends_on:
+      kafka:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 20s
+
+  # ============================================
+  # Spark Job - Threat Detection (auto-submit)
+  # ============================================
+  spark-job:
+    image: docker.io/apache/spark:3.5.0
+    container_name: spark-job
+    networks:
+      - siem-network
+    environment:
+      - SPARK_MASTER=spark://spark:7077
+    command: >
+      /bin/bash -c "
+        echo 'Waiting for Spark master to be ready...' &&
+        sleep 30 &&
+        echo 'Submitting threat detection job...' &&
+        /opt/spark/bin/spark-submit \
+          --master spark://spark:7077 \
+          --jars /opt/spark-jars/spark-sql-kafka-0-10_2.12-3.5.0.jar,/opt/spark-jars/kafka-clients-3.4.1.jar,/opt/spark-jars/spark-token-provider-kafka-0-10_2.12-3.5.0.jar,/opt/spark-jars/commons-pool2-2.11.1.jar \
+          --conf spark.driver.host=spark-job \
+          /opt/spark-apps/threat_detection.py
+      "
+    volumes:
+      - /root/siem/spark-apps:/opt/spark-apps:z
+      - /root/siem/spark-jars:/opt/spark-jars:z
+      - spark-checkpoints:/tmp/checkpoints
+    depends_on:
+      spark:
+        condition: service_healthy
+      kafka:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_healthy
+    restart: on-failure

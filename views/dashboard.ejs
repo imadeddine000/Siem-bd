@@ -1,0 +1,48 @@
+<h1 class="text-3xl font-bold mb-6">Dashboard</h1>
+
+<div class="bg-white p-4 rounded shadow mb-6">
+  <h2 class="text-xl font-semibold mb-2">Install Agent</h2>
+  <div class="flex items-center space-x-2">
+    <code class="bg-gray-200 p-2 rounded flex-1">curl http://<%= hostIp %>:3000/setup.sh | sudo bash</code>
+    <button onclick="copy()" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Copy</button>
+  </div>
+</div>
+
+<h2 class="text-xl font-semibold mb-2">Registered Agents</h2>
+
+<% if (!agents || agents.length === 0) { %>
+  <p>No agents yet</p>
+<% } else { %>
+  <table class="min-w-full bg-white shadow rounded">
+    <thead>
+      <tr class="bg-gray-200 text-left">
+        <th class="px-4 py-2">Hostname</th>
+        <th class="px-4 py-2">OS</th>
+        <th class="px-4 py-2">Arch</th>
+        <th class="px-4 py-2">IP</th>
+        <th class="px-4 py-2">Registered</th>
+        <th class="px-4 py-2">Last Heartbeat</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% agents.forEach(a => { %>
+        <tr class="border-t">
+          <td class="px-4 py-2"><%= a.hostname %></td>
+          <td class="px-4 py-2"><%= a.os %> <%= a.version %></td>
+          <td class="px-4 py-2"><%= a.arch %></td>
+          <td class="px-4 py-2"><%= a.agent_ip %></td>
+          <td class="px-4 py-2"><%= a.registeredAt %></td>
+          <td class="px-4 py-2"><%= a.lastHeartbeat %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } %>
+
+<script>
+function copy() {
+  navigator.clipboard.writeText(document.querySelector("code").innerText.trim());
+  alert("Copied!");
+}
+</script>
+

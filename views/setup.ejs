@@ -1,0 +1,21 @@
+<% layout('layouts/main', { title: 'Agent Setup' }) %>
+
+<h1 class="text-3xl font-bold mb-6">Agent Setup</h1>
+
+<div class="bg-white p-6 rounded shadow">
+  <h2 class="text-xl font-semibold mb-2">Install Command</h2>
+  <div class="flex items-center space-x-2">
+    <code class="bg-gray-200 p-2 rounded flex-1" id="cmd">
+      curl http://<%= hostIp %>:3000/setup.sh | sudo bash
+    </code>
+    <button onclick="copy()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Copy</button>
+  </div>
+</div>
+
+<script>
+function copy() {
+  navigator.clipboard.writeText(document.getElementById("cmd").innerText.trim());
+  alert("Copied!");
+}
+</script>
+

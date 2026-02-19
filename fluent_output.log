@@ -1,0 +1,29 @@
+Fluent Bit v4.2.2
+* Copyright (C) 2015-2025 The Fluent Bit Authors
+* Fluent Bit is a CNCF graduated project under the Fluent organization
+* https://fluentbit.io
+
+______ _                  _    ______ _ _             ___   _____ 
+|  ___| |                | |   | ___ (_) |           /   | / __  \
+| |_  | |_   _  ___ _ __ | |_  | |_/ /_| |_  __   __/ /| | `' / /'
+|  _| | | | | |/ _ \ '_ \| __| | ___ \ | __| \ \ / / /_| |   / /  
+| |   | | |_| |  __/ | | | |_  | |_/ / | |_   \ V /\___  |_./ /___
+\_|   |_|\__,_|\___|_| |_|\__| \____/|_|\__|   \_/     |_(_)_____/
+                                                                  
+             Fluent Bit v4.2 – Direct Routes Ahead
+         Celebrating 10 Years of Open, Fluent Innovation!
+
+[2026/02/19 10:27:49.857214454] [ info] [fluent bit] version=4.2.2, commit=, pid=12912
+[2026/02/19 10:27:49.859147063] [ info] [storage] ver=1.5.4, type=memory, sync=normal, checksum=off, max_chunks_up=128
+[2026/02/19 10:27:49.859247283] [ info] [simd    ] SSE2
+[2026/02/19 10:27:49.859258504] [ info] [cmetrics] version=1.0.6
+[2026/02/19 10:27:49.859264486] [ info] [ctraces ] version=0.6.6
+[2026/02/19 10:27:49.859350519] [ info] [input:forward:forward.0] initializing
+[2026/02/19 10:27:49.859356721] [ info] [input:forward:forward.0] storage_strategy='memory' (memory only)
+[2026/02/19 10:27:49.864437905] [ info] [input:forward:forward.0] listening on 0.0.0.0:24224
+[2026/02/19 10:27:49.900069583] [ info] [output:kafka:kafka.0] brokers='127.0.0.1:9092' topics='logs.raw'
+[2026/02/19 10:27:49.904440685] [ info] [sp] stream processor started
+[2026/02/19 10:27:49.908103337] [ info] [engine] Shutdown Grace Period=5, Shutdown Input Grace Period=2
+[2026/02/19 10:27:49.953586820] [error] [output:kafka:kafka.0] fluent-bit#producer-1: [thrd:localhost:9092/1]: localhost:9092/1: Connect to ipv6#[::1]:9092 failed: Connection refused (after 1ms in state CONNECT)
+[2026/02/19 10:27:49.953637246] [error] [output:kafka:kafka.0] fluent-bit#producer-1: [thrd:localhost:9092/1]: 1/1 brokers are down
+[2026/02/19 10:28:59.372881012] [error] [output:kafka:kafka.0] fluent-bit#producer-1: [thrd:app]: fluent-bit#producer-1: localhost:9092/1: Connect to ipv6#[::1]:9092 failed: Connection refused (after 1ms in state CONNECT)

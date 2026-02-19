@@ -1,0 +1,5 @@
+/root/siem/consumer.py:20: DeprecationWarning: The 'timeout' parameter is deprecated in favor of 'request_timeout'
+  es = Elasticsearch(
+Connecting to Kafka at: localhost:9092
+Connecting to Elasticsearch at: localhost:9200
+Could not connect to Elasticsearch

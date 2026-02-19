@@ -1,0 +1,763 @@
+
+> siem@1.0.0 start
+> nodemon index.js
+
+[33m[nodemon] 3.1.11[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: js,mjs,cjs,json[39m
+[32m[nodemon] starting `node index.js`[39m
+✅ Collector running on http://10.110.88.38:3000
+✅ Connected to SQLite database
+hearbit received
+hearbit saved in db
+✅ Agent registered/heartbeat: localhost.localdomain (10.110.88.26)
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+✅ Agent registered/heartbeat: agent2 (10.110.88.171)
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+✅ Agent registered/heartbeat: localhost.localdomain (10.110.88.26)
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+hearbit received
+hearbit saved in db
+✅ Agent registered/heartbeat: agent2 (10.110.88.171)
+hearbit received
+hearbit saved in db
+✅ Agent registered/heartbeat: localhost.localdomain (10.110.88.26)
+hearbit received
+hearbit saved in db
+✅ Agent registered/heartbeat: agent2 (10.110.88.171)
